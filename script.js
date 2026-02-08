@@ -1,30 +1,39 @@
-// Fade-in animation on scroll
-const observerOptions = {
-    threshold: 0.1
-};
+// Intersection Observer for Smooth Reveal
+const observerOptions = { threshold: 0.15 };
 
-const observer = new IntersectionObserver((entries) => {
+const revealOnScroll = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
+            entry.target.classList.add('is-visible');
         }
     });
 }, observerOptions);
 
 document.querySelectorAll('.section').forEach(section => {
+    // Add initial state via JS to ensure it works even if CSS fails
     section.style.opacity = "0";
-    section.style.transform = "translateY(30px)";
-    section.style.transition = "all 0.8s ease-out";
-    observer.observe(section);
+    section.style.transform = "translateY(40px)";
+    section.style.transition = "all 0.8s cubic-bezier(0.2, 1, 0.3, 1)";
+    revealOnScroll.observe(section);
 });
 
-// Smooth scroll handling for nav links
-document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+// Update styles when visible
+const style = document.createElement('style');
+style.innerHTML = `
+    .is-visible {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+`;
+document.head.appendChild(style);
+
+// Smooth Scroll for Nav
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', (e) => {
         e.preventDefault();
-        const targetId = this.getAttribute('href');
-        document.querySelector(targetId).scrollIntoView({
+        const target = document.querySelector(link.getAttribute('href'));
+        window.scrollTo({
+            top: target.offsetTop - 80,
             behavior: 'smooth'
         });
     });
