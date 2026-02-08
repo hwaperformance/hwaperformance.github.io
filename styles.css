@@ -1,26 +1,26 @@
 :root {
-    --primary: #00ffcc;
-    --accent: #ff424d;
-    --glass: rgba(255, 255, 255, 0.05);
-    --border: rgba(255, 255, 255, 0.1);
+    --accent: #00e5ff; /* Matches your blue particles */
+    --glass-bg: rgba(0, 0, 0, 0.45);
+    --glass-border: rgba(255, 255, 255, 0.1);
 }
 
 body {
     margin: 0;
-    font-family: 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Inter', sans-serif;
     color: white;
-    background: #050505;
-    overflow-x: hidden;
+    background: #000;
     scroll-behavior: smooth;
 }
 
 /* Background Logic */
-#bg-gif {
+#bg-video {
     position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
+    top: 50%; left: 50%;
+    min-width: 100%; min-height: 100%;
+    width: auto; height: auto;
     z-index: -2;
-    background: url('assets/star-background.gif') center/cover no-repeat;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
 }
 
 #bg-overlay {
@@ -28,119 +28,91 @@ body {
     top: 0; left: 0;
     width: 100%; height: 100%;
     z-index: -1;
-    background: radial-gradient(circle, transparent 20%, #000 120%);
-    opacity: 0.7;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.8));
 }
 
-/* Glassmorphism Styles */
-.glass {
-    background: var(--glass);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--border);
-    border-radius: 15px;
-}
-
-header {
-    text-align: center;
-    padding: 100px 20px 60px;
-}
-
-h1 {
-    font-size: 3rem;
-    letter-spacing: 5px;
-    margin: 0;
-}
-
-h1 span {
-    color: var(--primary);
-    font-weight: 300;
-}
-
+/* Navigation */
 nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(15px);
-    padding: 15px;
-    border-bottom: 1px solid var(--primary);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 0;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
 }
 
 .nav-links {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 40px;
 }
 
 nav a {
-    color: white;
+    color: #fff;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
+    letter-spacing: 1px;
     text-transform: uppercase;
     transition: 0.3s;
-    font-size: 0.9rem;
 }
 
-nav a:hover {
-    color: var(--primary);
-    text-shadow: 0 0 10px var(--primary);
-}
+nav a:hover { color: var(--accent); }
 
-.section {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 40px;
+/* Hero Section */
+.hero-header {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
 }
 
-.grid {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-    margin-top: 30px;
+h1 {
+    font-size: 4rem;
+    margin: 0;
+    letter-spacing: 8px;
 }
 
-.card {
+h1 span { color: var(--accent); font-weight: 300; }
+
+/* Glassmorphism Panels */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    padding: 60px;
+    border-radius: 20px;
+    margin: 40px auto;
+    max-width: 900px;
+}
+
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--glass-border);
     padding: 20px;
+    border-radius: 15px;
     width: 300px;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: 0.4s ease;
 }
 
-.card:hover {
+.glass-card:hover {
     transform: translateY(-10px);
-    border-color: var(--primary);
-    box-shadow: 0 10px 30px rgba(0, 255, 204, 0.2);
+    border-color: var(--accent);
 }
 
-.card img {
-    width: 100%;
-    border-radius: 8px;
-}
-
+/* Buttons */
 .btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 25px;
-    background: var(--primary);
-    color: black;
+    padding: 12px 30px;
+    border-radius: 5px;
     text-decoration: none;
-    border-radius: 50px;
     font-weight: bold;
+    display: inline-block;
     transition: 0.3s;
 }
 
-.btn:hover {
-    box-shadow: 0 0 20px var(--primary);
-    transform: scale(1.05);
-}
+.primary-btn { background: var(--accent); color: #000; margin-top: 20px; }
+.discord-btn { background: #5865F2; color: white; }
+.patreon-btn { background: #ff424d; color: white; }
 
-.patreon { background: var(--accent); color: white; }
-.discord { background: #5865F2; color: white; margin-right: 10px; }
-
-footer {
-    text-align: center;
-    padding: 40px;
-    font-size: 0.8rem;
-    color: #666;
-}
+.btn:hover { box-shadow: 0 0 20px var(--accent); }
