@@ -1,72 +1,82 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>HWA Performance | Assetto Corsa Mods</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <title>HWA Performance | High-End Assetto Corsa Mods</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-<div id="bg"></div>
+<div id="bg-overlay"></div>
+<div id="bg-gif"></div>
 
 <header>
-  <h1>HWA Performance</h1>
-  <p>High Quality Assetto Corsa Mods</p>
+    <div class="logo-container">
+        <h1>HWA<span>PERFORMANCE</span></h1>
+        <p class="tagline">The Digital Edge of Automotive Engineering</p>
+    </div>
 </header>
 
 <nav>
-  <a href="#mods">Mods</a>
-  <a href="#gallery">Gallery</a>
-  <a href="#community">Community</a>
+    <div class="nav-links">
+        <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+        <a href="#mods"><i class="fas fa-car"></i> Mods</a>
+        <a href="#gallery"><i class="fas fa-images"></i> Gallery</a>
+        <a href="#community"><i class="fas fa-users"></i> Community</a>
+    </div>
 </nav>
 
-<section class="hero">
-  <h2>Realistic Builds. Real Performance.</h2>
-  <p>Custom physics • Sounds • High-quality visuals</p>
-</section>
+<main>
+    <section id="about" class="section glass">
+        <h2>About HWA</h2>
+        <p>HWA Performance isn't just about car mods; it's about recreating the visceral feeling of the road. We specialize in custom physics engines and high-fidelity soundscapes that bridge the gap between simulation and reality.</p>
+    </section>
 
-<section id="mods" class="section">
-  <h2>Featured Mods</h2>
-  <div class="grid">
+    <section id="mods" class="section">
+        <h2 class="section-title">Featured Builds</h2>
+        <div class="grid">
+            <div class="card glass">
+                <div class="card-img-container">
+                    <img src="assets/rs3.jpg" alt="Audi RS3">
+                </div>
+                <h3>Audi RS3 HWA Spec</h3>
+                <p>600HP • Custom Sound • Air Suspension</p>
+                <a class="btn" href="#">Download <i class="fas fa-download"></i></a>
+            </div>
 
-```
-<div class="card">
-  <img src="assets/rs3.jpg">
-  <h3>Audi RS3 HWA Spec</h3>
-  <p>600HP • Custom Sound • Air Suspension</p>
-  <a class="btn" href="#">Download</a>
-</div>
+            <div class="card glass">
+                <div class="card-img-container">
+                    <img src="assets/sportage.jpg" alt="Sportage GT">
+                </div>
+                <h3>Sportage GT HWA</h3>
+                <p>650HP • Twin Turbo • AWD Setup</p>
+                <a class="btn" href="#">Download <i class="fas fa-download"></i></a>
+            </div>
+        </div>
+    </section>
 
-<div class="card">
-  <img src="assets/sportage.jpg">
-  <h3>Sportage GT HWA</h3>
-  <p>650HP • Twin Turbo • AWD Setup</p>
-  <a class="btn" href="#">Download</a>
-</div>
-```
+    <section id="gallery" class="section glass">
+        <h2>Gallery</h2>
+        <div class="gallery-placeholder">
+            <p>High-resolution renders and in-game shots loading from the cloud...</p>
+            </div>
+    </section>
 
-  </div>
-</section>
-
-<section id="gallery" class="section">
-  <h2>Gallery</h2>
-  <p>High-resolution renders and in-game shots.</p>
-</section>
-
-<section id="community" class="section">
-  <h2>Community</h2>
-  <a class="btn" href="https://discord.gg/n9bzcJNR8S">Join Discord</a>
-  <a class="btn patreon" href="https://www.patreon.com/c/HWA_PERFORMANCE">Support on Patreon</a>
-</section>
+    <section id="community" class="section">
+        <h2>Join the Elite</h2>
+        <div class="community-btns">
+            <a class="btn discord" href="https://discord.gg/n9bzcJNR8S"><i class="fab fa-discord"></i> Discord</a>
+            <a class="btn patreon" href="https://www.patreon.com/c/HWA_PERFORMANCE"><i class="fab fa-patreon"></i> Support on Patreon</a>
+        </div>
+    </section>
+</main>
 
 <footer>
-  <p>© 2026 HWA Performance</p>
+    <p>© 2026 HWA Performance | Engineered for Excellence</p>
 </footer>
 
 <script src="script.js"></script>
-
 </body>
 </html>
-
