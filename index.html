@@ -5,6 +5,7 @@
     <title>HWA Performance | High-End Assetto Corsa Mods</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -26,17 +27,17 @@
 <header class="hero-header">
     <div class="hero-content">
         <h1>HWA<span>PERFORMANCE</span></h1>
-        <p>Precision Engineering for the Virtual Track</p>
-        <a href="#mods" class="btn primary-btn">Explore Mods</a>
+        <p class="tagline">Precision Engineering for the Virtual Track</p>
+        <div class="hero-btns">
+            <a href="#mods" class="btn primary-btn">Explore Mods</a>
+        </div>
     </div>
 </header>
 
 <main>
     <section id="about" class="section glass-panel">
-        <div class="content-box">
-            <h2>The HWA Philosophy</h2>
-            <p>We push the limits of the Assetto Corsa engine, delivering custom physics and high-fidelity soundscapes that mirror the raw energy of real-world performance builds.</p>
-        </div>
+        <h2>The HWA Philosophy</h2>
+        <p>We push the limits of the Assetto Corsa engine, delivering custom physics and high-fidelity soundscapes that mirror the raw energy of real-world performance builds. Every mod is tuned for realism and visual perfection.</p>
     </section>
 
     <section id="mods" class="section">
@@ -46,37 +47,41 @@
                 <div class="img-wrapper">
                     <img src="assets/rs3.jpg" alt="Audi RS3">
                 </div>
-                <h3>Audi RS3 HWA Spec</h3>
-                <p>600HP • Custom Sound • Air Suspension</p>
-                <a class="btn" href="#">Download</a>
+                <div class="card-info">
+                    <h3>Audi RS3 HWA Spec</h3>
+                    <p>600HP • Custom Sound • Air Suspension</p>
+                    <a class="btn download-btn" href="#">Download <i class="fas fa-download"></i></a>
+                </div>
             </div>
 
             <div class="card glass-card">
                 <div class="img-wrapper">
                     <img src="assets/sportage.jpg" alt="Sportage GT">
                 </div>
-                <h3>Sportage GT HWA</h3>
-                <p>650HP • Twin Turbo • AWD Setup</p>
-                <a class="btn" href="#">Download</a>
+                <div class="card-info">
+                    <h3>Sportage GT HWA</h3>
+                    <p>650HP • Twin Turbo • AWD Setup</p>
+                    <a class="btn download-btn" href="#">Download <i class="fas fa-download"></i></a>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="gallery" class="section glass-panel">
-        <h2>Visual Excellence</h2>
+        <h2>Gallery</h2>
+        <p>In-game captures of our latest builds in action.</p>
         <div class="gallery-grid">
-            <div class="gallery-item"></div>
-            <div class="gallery-item"></div>
+            <div class="gallery-placeholder">Renders Loading...</div>
         </div>
     </section>
 
     <section id="community" class="section">
         <div class="community-box glass-panel">
             <h2>Join the Inner Circle</h2>
-            <p>Get exclusive early access to builds and technical support.</p>
+            <p>Get exclusive early access to builds and direct technical support from our team.</p>
             <div class="btn-group">
-                <a class="btn discord-btn" href="https://discord.gg/n9bzcJNR8S">Discord</a>
-                <a class="btn patreon-btn" href="https://www.patreon.com/c/HWA_PERFORMANCE">Patreon</a>
+                <a class="btn discord-btn" href="https://discord.gg/n9bzcJNR8S"><i class="fab fa-discord"></i> Discord</a>
+                <a class="btn patreon-btn" href="https://www.patreon.com/c/HWA_PERFORMANCE"><i class="fab fa-patreon"></i> Patreon</a>
             </div>
         </div>
     </section>
