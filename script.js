@@ -1,16 +1,31 @@
-const images = [
-"assets/bg1.jpg",
-"assets/bg2.jpg",
-"assets/bg3.jpg"
-];
+// Fade-in animation on scroll
+const observerOptions = {
+    threshold: 0.1
+};
 
-let index = 0;
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+        }
+    });
+}, observerOptions);
 
-function changeBackground() {
-document.getElementById("bg").style.backgroundImage =
-`url(${images[index]})`;
-index = (index + 1) % images.length;
-}
+document.querySelectorAll('.section').forEach(section => {
+    section.style.opacity = "0";
+    section.style.transform = "translateY(30px)";
+    section.style.transition = "all 0.8s ease-out";
+    observer.observe(section);
+});
 
-changeBackground();
-setInterval(changeBackground, 10000);
+// Smooth scroll handling for nav links
+document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        document.querySelector(targetId).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
